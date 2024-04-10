@@ -8,18 +8,10 @@ function App() {
   //   const savedContacts = window.localStorage.getItem('contacts');
   //   return JSON.parse(savedContacts) ?? [];
   // });
-  // const [filter, setFilter] = useState('');
-  // const [deletedId, setDeletedId] = useState('');
 
   // useEffect(() => {
   //   window.localStorage.setItem('contacts', JSON.stringify(contacts));
   // }, [contacts]);
-
-  // const deleteContact = contactId => {
-  //   setTimeout(() => {
-  //     setContacts(contacts => contacts.filter(el => el.id !== contactId));
-  //   }, 200);
-  // };
 
   return (
     <div>

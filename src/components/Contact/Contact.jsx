@@ -2,11 +2,20 @@ import { FaUser } from 'react-icons/fa';
 import { FaPhone } from 'react-icons/fa6';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from '../../redux/contactsSlice.js';
+import { setId } from '../../redux/deletedIdSlice.js';
 
 import css from './Contact.module.css';
 
 const Contact = ({ name, number, id }) => {
   const dispatch = useDispatch();
+
+  const handleClick = () => {
+    dispatch(setId(id));
+
+    setTimeout(() => {
+      dispatch(deleteContact(id));
+    }, 200);
+  };
 
   return (
     <div className={css.contactItem}>
@@ -20,13 +29,7 @@ const Contact = ({ name, number, id }) => {
           </a>
         </p>
       </div>
-      <button
-        type="button"
-        className={css.btn}
-        onClick={() => {
-          dispatch(deleteContact(id));
-        }}
-      >
+      <button type="button" className={css.btn} onClick={handleClick}>
         Delete
       </button>
     </div>

@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { setFilter } from '../../redux/filtersSlice.js';
+import { changeFilter, selectNameFilter } from '../../redux/filtersSlice.js';
 import css from './SearchBar.module.css';
 
 const SearchBar = () => {
-  const [value, setValue] = useState();
+  const filter = useSelector(selectNameFilter);
   const dispatch = useDispatch();
 
   return (
@@ -14,8 +14,8 @@ const SearchBar = () => {
         <input
           className={css.input}
           type="text"
-          value={value}
-          onChange={e => dispatch(setFilter(e.target.value))}
+          value={filter}
+          onChange={e => dispatch(changeFilter(e.target.value))}
         />
       </label>
     </div>
