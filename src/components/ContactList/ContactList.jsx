@@ -10,12 +10,13 @@ const ContactList = () => {
   const filter = useSelector(selectNameFilter);
   const deletedId = useSelector(getDeletedId);
 
-  const visibleContacts = contacts.filter(
-    contact =>
-      contact.name.toLowerCase().includes(filter.toLowerCase()) ||
-      contact.number.includes(filter) ||
-      contact.number.split('-').join('').includes(filter)
-  );
+  const visibleContacts =
+    contacts?.filter(
+      contact =>
+        contact.name.toLowerCase().includes(filter.toLowerCase()) ||
+        contact.number.includes(filter) ||
+        contact.number.split('-').join('').includes(filter)
+    ) || [];
 
   return (
     <ul className={css.contactList}>
