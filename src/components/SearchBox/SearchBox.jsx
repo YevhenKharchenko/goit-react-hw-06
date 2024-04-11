@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { changeFilter, selectNameFilter } from '../../redux/filtersSlice.js';
-import css from './SearchBar.module.css';
+import css from './SearchBox.module.css';
 
-const SearchBar = () => {
+const SearchBox = () => {
   const filter = useSelector(selectNameFilter);
   const dispatch = useDispatch();
 
@@ -22,4 +22,4 @@ const SearchBar = () => {
   );
 };
 
-export default SearchBar;
+export default SearchBox;

@@ -13,7 +13,6 @@ import {
 import storage from 'redux-persist/lib/storage';
 import { contactsReducer } from './contactsSlice';
 import { filtersReducer } from './filtersSlice';
-import { deletedIdReducer } from './deletedIdSlice';
 
 const persistConfig = {
   key: 'contacts',
@@ -25,7 +24,6 @@ const persistConfig = {
 const reducer = combineReducers({
   contacts: contactsReducer,
   filters: filtersReducer,
-  deletedId: deletedIdReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);
