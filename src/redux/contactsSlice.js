@@ -13,10 +13,13 @@ const contactsSlice = createSlice({
       );
     },
   },
+  selectors: {
+    selectContacts: state => state.items,
+  },
 });
 
 export const { addContact, deleteContact } = contactsSlice.actions;
 
 export const contactsReducer = contactsSlice.reducer;
 
-export const selectContacts = state => state.contacts.items;
+export const { selectContacts } = contactsSlice.selectors;
